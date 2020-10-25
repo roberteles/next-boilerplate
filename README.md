@@ -52,7 +52,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 [-] Jest (almost ready, have 1 bug)
 
 **API**
-[] Express.js
+[x] Express.js
 
 **Running**
 [x] Docker

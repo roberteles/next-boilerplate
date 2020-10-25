@@ -23,8 +23,12 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "@modules": "./modules",
-      "@server": "./server"
+      "@modules": [
+        "./modules"
+      ],
+      "@api": [
+        "api"
+      ]
     }
   },
   "exclude": [

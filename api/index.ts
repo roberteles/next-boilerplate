@@ -1,4 +1,3 @@
-import http from 'http'
 import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
@@ -8,7 +7,6 @@ import initializeDb from './db'
 import api from './api'
 
 let app = express()
-app.server = http.createServer(app)
 
 // logger
 app.use(morgan('dev'))
@@ -26,8 +24,9 @@ initializeDb((db: any) => {
 	// api router
 	app.use('/api', api({ db }));
 
-	app.server.listen(process.env.API_PORT || 4000, () => {
-        console.log(`Started on port ${app.server.address().port}`);
+	const port = process.env.API_PORT || 4000
+	app.listen(port, () => {
+		console.log(`Started on port ${port}`);
 	});
 });
 
